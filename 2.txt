@@ -1,1 +1,1 @@
-hello this is second text file
+Updated text in 2.txt
