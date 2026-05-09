@@ -6,13 +6,20 @@ on:
   pull_request:
     branches: [main]
 
-jobs:
-  test:
-    [cite_start]runs-on: ubuntu-latest [cite: 136]
-    steps:
-      - [cite_start]uses: actions/checkout@v4 [cite: 140]
-      - [cite_start]uses: actions/setup-python@v5 [cite: 142]
+jobs:  # Level 0
+  test:  # Level 1 (2 spaces in)
+    runs-on: ubuntu-latest  # Level 2 (4 spaces in)
+    steps:  # Level 2 (4 spaces in)
+      - name: Checkout repository  # Level 3 (6 spaces in)
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
         with:
-          [cite_start]python-version: '3.12' [cite: 144]
-      - [cite_start]run: pip install -r requirements.txt [cite: 328]
-      - [cite_start]run: pytest tests/ -v [cite: 148]
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run tests
+        run: pytest tests/ -v
