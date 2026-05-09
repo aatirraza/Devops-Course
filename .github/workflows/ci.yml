@@ -1,6 +1,10 @@
 name: CI Pipeline
 
-[cite_start]on: [push, pull_request] [cite: 124, 128]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
 
 jobs:
   test:
