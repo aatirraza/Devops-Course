@@ -1,0 +1,14 @@
+name: CI Pipeline
+
+[cite_start]on: [push, pull_request] [cite: 124, 128]
+
+jobs:
+  test:
+    [cite_start]runs-on: ubuntu-latest [cite: 136]
+    steps:
+      - [cite_start]uses: actions/checkout@v4 [cite: 140]
+      - [cite_start]uses: actions/setup-python@v5 [cite: 142]
+        with:
+          [cite_start]python-version: '3.12' [cite: 144]
+      - [cite_start]run: pip install -r requirements.txt [cite: 328]
+      - [cite_start]run: pytest tests/ -v [cite: 148]
